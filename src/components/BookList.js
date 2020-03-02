@@ -3,6 +3,9 @@ import BookCard from "./BookCard";
 
 
 function BookList(props) {
+  if (!props.books) {
+    return null;
+  }
   const bookItems = props.books.map(book => 
     <li key={book.id}>
       <BookCard book={book} handleRemove={props.handleRemove}/>

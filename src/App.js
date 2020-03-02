@@ -8,31 +8,40 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    /* PLACEHOLDER BOOKS */
-    const book1 = new Book("The Hobbit", "JRR Tolkien", 300, true);
-    const book2 = new Book("Brave New World", "Aldous Huxley", 200, true);
-    const book3 = new Book("Foo", "Bar", 1000, false);
-    const book4 = new Book("A Fourth Book", "BarFoo", 70, false);
+    const placeholderBooks = [
+      new Book("The Hobbit", "JRR Tolkien", 320, true),
+      new Book("Brave New World", "Aldous Huxley", 311, true),
+      new Book("Foo", "Bar", 1000, false),
+      new Book("A Fourth Book", "BarFoo", 70, false),
+    ]
 
-    this.state = {
-      books: [book1, book2, book3, book4],
+    this.state = { 
+      books: JSON.parse(localStorage.getItem("books")) || placeholderBooks,
     }
+    localStorage.setItem("books", JSON.stringify(this.state.books));
 
     this.addBook = this.addBook.bind(this);
     this.removeBook = this.removeBook.bind(this);
   }
 
   addBook(title, author, numPages, read) {
+    /* setState is async, so updated state is first calculated and stored
+     * in a separate variable so that React state and localStorage state
+     * stay in sync */
     const book = new Book(title, author, numPages, read);
+    const updatedBookList = this.state.books.concat([book]);
     this.setState({
-      books: this.state.books.concat([book]),
+      books: updatedBookList,
     })
+    localStorage.setItem("books", JSON.stringify(updatedBookList));
   }
 
   removeBook(id) {
+    const updatedBookList = this.state.books.filter(book => book.id !== id);
     this.setState(state => ({
-      books: state.books.filter(book => book.id !== id)
+      books: updatedBookList,
     }));
+    localStorage.setItem("books", JSON.stringify(updatedBookList));
   }
 
   render() {
