@@ -67,3 +67,12 @@ header {
 .book-card p {
   margin: 0.5em;
 }
+
+.field-list {
+  list-style: none;
+}
+
+.field-list li {
+  display: flex;
+  flex-direction: column;
+}

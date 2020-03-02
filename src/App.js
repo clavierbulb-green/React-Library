@@ -1,6 +1,7 @@
 import React from "react";
 import Book from "./Book";
 import BookList from "./components/BookList.js";
+import BookForm from "./components/BookForm.js";
 
 
 class App extends React.Component {
@@ -14,6 +15,15 @@ class App extends React.Component {
     this.state = {
       books: [book1, book1, book1, book2, book2, book2],
     }
+
+    this.addBook = this.addBook.bind(this);
+  }
+
+  addBook(title, author, numPages, read) {
+    const book = new Book(title, author, numPages, read);
+    this.setState({
+      books: this.state.books.concat([book]),
+    })
   }
 
   render() {
@@ -24,7 +34,8 @@ class App extends React.Component {
           <button className="new-book-button">New Book</button>
         </header>
         <main>
-          <BookList books={this.state.books}/>
+          <BookForm onSubmit={this.addBook} />
+          <BookList books={this.state.books} />
         </main>
       </div>
     );
