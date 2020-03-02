@@ -31,6 +31,8 @@ class BookForm extends React.Component {
       this.state.pages,
       this.state.read
     );
+
+    // clear form
     this.setState({
       title: "",
       author: "",

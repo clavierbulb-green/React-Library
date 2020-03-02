@@ -10,6 +10,8 @@ header {
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-around;
+
+  z-index: 10;
 }
 
 .headline {
@@ -50,13 +52,18 @@ header {
 }
 
 .book-card {
+  position: relative;
+
   border: 1px solid #BBDEFB;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
 
+  padding: 0.5em;
+
   color: #2962FF;
   font-size: calc(1rem + 0.5vw);
+
 }
 
 .book-card .title {
@@ -65,7 +72,20 @@ header {
 }
 
 .book-card p {
-  margin: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.remove-book-button {
+  position: absolute;
+  top: 0.2em;
+  right: 0.5em;
+
+  border-style: none;
+
+  font-size: calc(1em + 5vw);
+
+  color: #DD2C00;
+  background-color: white;
 }
 
 .field-list {

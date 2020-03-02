@@ -4,8 +4,8 @@ import BookCard from "./BookCard";
 
 function BookList(props) {
   const bookItems = props.books.map(book => 
-    <li>
-      <BookCard book={book} />
+    <li key={book.id}>
+      <BookCard book={book} handleRemove={props.handleRemove}/>
     </li>
   );
   return (
