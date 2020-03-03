@@ -7,7 +7,7 @@ class BookForm extends React.Component {
     this.state = {
       title: "",
       author: "",
-      pages: "",
+      pages: 0,
       read: false,
     };
 
@@ -36,7 +36,7 @@ class BookForm extends React.Component {
     this.setState({
       title: "",
       author: "",
-      pages: "",
+      pages: 0,
       read: false,
     });
     e.preventDefault();
@@ -49,18 +49,18 @@ class BookForm extends React.Component {
           <h2 className="form-title">New Book</h2>
           <ul className="field-list">
             <li>
-              <label htmlFor="title">Title *</label>
-              <input type="text" id="title" name="title" 
+              <label htmlFor="title">Title</label>
+              <input required type="text" id="title" name="title" 
                 value={this.state.title} onChange={this.handleInputChange} />
             </li>
             <li>
-              <label htmlFor="author">Author *</label>
-              <input type="text" id="author" name="author" 
+              <label htmlFor="author">Author</label>
+              <input required type="text" id="author" name="author" 
                 value={this.state.author} onChange={this.handleInputChange} />
             </li>
             <li>
               <label htmlFor="pages">Number of Pages</label>
-              <input type="number" id="pages" name="pages" 
+              <input required min="0" type="number" id="pages" name="pages" 
                 value={this.state.pages} onChange={this.handleInputChange} />
             </li>
             <li>
