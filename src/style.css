@@ -70,13 +70,14 @@ header {
 
 .book-card {
   position: relative;
-
-  border: 1px solid #BBDEFB;
-  border-radius: 15px;
   display: flex;
   flex-direction: column;
 
+  border: 1px solid #BBDEFB;
+  border-radius: 15px;
+
   padding: 0.5em;
+  padding-bottom: 1em;
 
   color: #2962FF;
   font-size: calc(1rem + 0.5vw);
@@ -90,14 +91,22 @@ header {
   opacity: 1;
 }
 
-.book-card .title {
-  font-size: 1.5em;
+.title {
+  font-size: calc(1.2rem + 2vw);
+  font-style: italic;
+  font-weight: normal;
+
   color: #01579B;
-  margin-right: 1em;
+  margin-top: 0.5em;
+  margin-right: 1.1em;
 }
 
 .book-card p {
-  margin-bottom: 0.5em;
+  margin: 0;
+}
+
+.author {
+  font-weight: bold;
 }
 
 .remove-book-button {
