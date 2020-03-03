@@ -1,11 +1,14 @@
-
 button, input {
-  opacity: 0.6;
-  transition: opacity 200ms ease-in-out;
+  opacity: 0.7;
+  transition: all 200ms ease-in-out;
 }
 button:hover,
 input:hover {
   opacity: 1;
+}
+
+button:active {
+  transform: scale(95%);
 }
 
 header {
@@ -39,7 +42,7 @@ header {
 .new-book-button {
   border-style: none;
 
-  padding: 0.4em;
+  padding: 0.5em;
   margin-bottom: 0.1em;
 
   text-transform: uppercase;
@@ -49,7 +52,9 @@ header {
   color: white;
   font-weight: bold;
   background-color: #FFEE58;
+  text-shadow: 2px 2px 2px #BE9B12;
 
+  border-radius: 0.5em;
 }
 
 .book-list {
@@ -107,6 +112,11 @@ header {
 
 .author {
   font-weight: bold;
+}
+
+.read-status {
+  display: inline-block;
+  padding-top: 1em;
 }
 
 .remove-book-button {
@@ -168,7 +178,7 @@ header {
 
 @media (max-height: 460px) {
   .book-form {
-    top: 30%;
+    top: 33%;
   }
 }
 
@@ -219,11 +229,12 @@ input[type="checkbox"] {
 
 button[type="submit"] {
   border-style: none;
+  border-radius: 0.5em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 1.5em;
 
-  padding: 0.3em;
+  padding: 0.4em;
   color: white;
   background-color: #01579B;
 }
