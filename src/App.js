@@ -22,6 +22,8 @@ class App extends React.Component {
 
     this.addBook = this.addBook.bind(this);
     this.removeBook = this.removeBook.bind(this);
+    this.toggleForm = this.toggleForm.bind(this);
+    this.submitForm= this.submitForm.bind(this);
   }
 
   addBook(title, author, numPages, read) {
@@ -32,6 +34,7 @@ class App extends React.Component {
     const updatedBookList = this.state.books.concat([book]);
     this.setState({
       books: updatedBookList,
+      showForm: false,
     })
     localStorage.setItem("books", JSON.stringify(updatedBookList));
   }
@@ -44,15 +47,31 @@ class App extends React.Component {
     localStorage.setItem("books", JSON.stringify(updatedBookList));
   }
 
+  toggleForm() {
+    this.setState(state => ({
+      showForm: !state.showForm,
+    }));
+  }
+
+  submitForm(title, author, numPages, read) {
+    this.toggleForm();
+    this.addBook(title, author, numPages, read);
+  }
+
   render() {
     return (
       <div className="app">
         <header>
           <h1 className="headline">React Library</h1>
-          <button className="new-book-button">New Book</button>
+          <button className="new-book-button"
+                  onClick={this.toggleForm}>New Book</button>
         </header>
         <main>
-          <BookForm onSubmit={this.addBook} />
+          {this.state.showForm ?
+            <BookForm handleClose={this.toggleForm} 
+                      onSubmit={this.submitForm} />
+            : null
+          }
           <BookList books={this.state.books} handleRemove={this.removeBook} />
         </main>
       </div>
