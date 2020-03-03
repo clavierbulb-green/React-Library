@@ -1,3 +1,4 @@
+
 button, input {
   opacity: 0.6;
   transition: opacity 200ms ease-in-out;
@@ -54,11 +55,17 @@ header {
 .book-list {
   list-style: none;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+
+  padding: 0;
 }
 
 .book-list li {
-  margin-bottom: 1em;
+  margin: 0.5em;
+  flex: 0 1 350px;
 }
 
 .book-card {
@@ -73,11 +80,20 @@ header {
 
   color: #2962FF;
   font-size: calc(1rem + 0.5vw);
+
+  box-shadow: 1px 1px 2px black;
+  opacity: 0.9;
+  transition: opacity 200ms ease-in-out;
+}
+
+.book-card:hover {
+  opacity: 1;
 }
 
 .book-card .title {
   font-size: 1.5em;
   color: #01579B;
+  margin-right: 1em;
 }
 
 .book-card p {
@@ -87,11 +103,11 @@ header {
 .remove-book-button {
   position: absolute;
   top: 0.2em;
-  right: 0.5em;
+  right: 0.2em;
 
   border-style: none;
 
-  font-size: calc(1em + 5vw);
+  font-size: calc(1.2em + 2vw);
 
   color: #DD2C00;
   background-color: white;
@@ -201,5 +217,4 @@ button[type="submit"] {
   padding: 0.3em;
   color: white;
   background-color: #01579B;
-
 }
