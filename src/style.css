@@ -116,7 +116,23 @@ header {
 
 .read-status {
   display: inline-block;
-  padding-top: 1em;
+  border-style: none;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  margin-top: 1em;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  letter-spacing: 0.12rem;
+  color: white;
+}
+
+.read-status.read {
+  background-color: green;
+}
+
+.read-status.not-read {
+  background-color: red;
 }
 
 .remove-book-button {

@@ -22,8 +22,9 @@ class App extends React.Component {
 
     this.addBook = this.addBook.bind(this);
     this.removeBook = this.removeBook.bind(this);
+    this.toggleRead= this.toggleRead.bind(this);
     this.toggleForm = this.toggleForm.bind(this);
-    this.submitForm= this.submitForm.bind(this);
+    this.submitForm = this.submitForm.bind(this);
   }
 
   addBook(title, author, numPages, read) {
@@ -44,6 +45,21 @@ class App extends React.Component {
     this.setState(state => ({
       books: updatedBookList,
     }));
+    localStorage.setItem("books", JSON.stringify(updatedBookList));
+  }
+
+  toggleRead(id) {
+    const updatedBookList = this.state.books.map(book => {
+      if (book.id === id) {
+        const copy = Object.assign({}, book);
+        const updatedBook = Object.assign(copy, {read: !copy.read});
+        return updatedBook;
+      }
+      return book;
+    });
+    this.setState({
+      books: updatedBookList,
+    });
     localStorage.setItem("books", JSON.stringify(updatedBookList));
   }
 
@@ -72,7 +88,10 @@ class App extends React.Component {
                       onSubmit={this.submitForm} />
             : null
           }
-          <BookList books={this.state.books} handleRemove={this.removeBook} />
+          <BookList books={this.state.books} 
+                    toggleRead={this.toggleRead}
+                    handleRemove={this.removeBook}
+                    />
         </main>
       </div>
     );

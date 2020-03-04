@@ -10,8 +10,15 @@ class BookCard extends React.Component {
         <h2 className="title">{this.props.book.title}</h2>
         <p className="author">{this.props.book.author}</p>
         <p>{this.props.book.numPages} pages</p>
+
+        <button className={"read-status " + (
+          this.props.book.read ? "read" : "not-read")}
+          onClick={this.props.toggleRead.bind(this, this.props.book.id)}>
+            {this.props.book.read ? "READ" : "NOT READ" }
+        </button>
+
         <button className="remove-book-button"
-    onClick={this.props.handleRemove.bind(this, this.props.book.id)}>X</button>
+                onClick={this.props.handleRemove.bind(this, this.props.book.id)}>X</button>
       </div>
     );
   }
