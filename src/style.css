@@ -1,3 +1,11 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
 button, input {
   opacity: 0.7;
   transition: all 200ms ease-in-out;
@@ -59,30 +67,30 @@ header {
 
 .book-list {
   list-style: none;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
 
-  padding: 0;
-}
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: minmax(280px, auto);
+  column-gap: 3em;
+  row-gap: calc(3em + 4vw);
 
-.book-list li {
-  margin: 0.5em;
-  flex: 0 1 350px;
+  padding: 1em;
+  padding-left: 0;
 }
 
 .book-card {
+  width: 100%;
+  height: 100%;
   position: relative;
+
   display: flex;
   flex-direction: column;
+  justify-content: start;
 
   border: 1px solid #BBDEFB;
   border-radius: 15px;
 
-  padding: 0.5em;
-  padding-bottom: 1em;
+  padding: 0.6em;
 
   color: #2962FF;
   font-size: calc(1rem + 0.5vw);
@@ -106,8 +114,13 @@ header {
   margin-right: 1.1em;
 }
 
+.book-info {
+  margin-bottom: 0.7em;
+}
+
 .book-card p {
   margin: 0;
+  margin-bottom: 0.2em;
 }
 
 .author {
@@ -116,10 +129,14 @@ header {
 
 .read-status {
   display: inline-block;
+
   border-style: none;
   border-radius: 0.5em;
+
   padding: 0.5em;
-  margin-top: 1em;
+  margin-top: auto; /*place button at bottom of card */
+
+  width: 50%;
   text-align: center;
   font-size: 1.1em;
   font-weight: bold;

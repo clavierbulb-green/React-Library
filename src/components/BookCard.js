@@ -8,8 +8,10 @@ class BookCard extends React.Component {
     return (
       <div className="book-card">
         <h2 className="title">{this.props.book.title}</h2>
-        <p className="author">{this.props.book.author}</p>
-        <p>{this.props.book.numPages} pages</p>
+        <section className="book-info">
+          <p className="author">{this.props.book.author}</p>
+          <p>{this.props.book.numPages} pages</p>
+        </section>
 
         <button className={"read-status " + (
           this.props.book.read ? "read" : "not-read")}
