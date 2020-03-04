@@ -1,14 +1,17 @@
 {
   "name": "react-library",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple library app written in React",
+  "homepage": "https://clavierbulb-green.github.io/React-Library/",
   "private": true,
   "scripts": {
     "start": "parcel src/index.html",
+    "build": "rm -rf dist && parcel build src/index.html --public-url '.'",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "clavierbulb-green",
   "license": "ISC",
   "dependencies": {
     "react": "^16.13.0",
@@ -19,6 +22,7 @@
     "@babel/core": "^7.8.6",
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
+    "gh-pages": "^2.2.0",
     "parcel-bundler": "^1.12.4"
   }
 }
