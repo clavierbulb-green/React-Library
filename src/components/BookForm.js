@@ -46,32 +46,37 @@ class BookForm extends React.Component {
     return (
       <div className="form-container">
         <form className="book-form" onSubmit={this.handleSubmit}>
-          <h2 className="form-title">New Book</h2>
-          <ul className="field-list">
-            <li>
+          <h2 className="book-form__title">New Book</h2>
+          <ul className="book-form__field-list">
+            <li className="field-item">
               <label htmlFor="title">Title</label>
-              <input required type="text" id="title" name="title" 
+              <input className="field-item__input" 
+                     required type="text" id="title" name="title" 
                 value={this.state.title} onChange={this.handleInputChange} />
             </li>
-            <li>
+            <li className="field-item">
               <label htmlFor="author">Author</label>
-              <input required type="text" id="author" name="author" 
+              <input className="field-item__input"
+                     required type="text" id="author" name="author" 
                 value={this.state.author} onChange={this.handleInputChange} />
             </li>
-            <li>
+            <li className="field-item">
               <label htmlFor="pages">Number of Pages</label>
-              <input required min="0" type="number" id="pages" name="pages" 
+              <input className="field-item__input"
+                     required min="0" type="number" id="pages" name="pages" 
                 value={this.state.pages} onChange={this.handleInputChange} />
             </li>
-            <li>
+            <li className="field-item">
               <label htmlFor="read">Have you read this book?</label>
-              <input type="checkbox" id="read" name="read"
+              <input className="field-item__input-checkbox"
+                     type="checkbox" id="read" name="read"
                 checked={this.state.read} onChange={this.handleInputChange} />
             </li>
           </ul>
-          <button className="form-close-button"
+          <button className="book-form__close-button"
                   onClick={this.props.handleClose}>X</button>
-          <button type="submit">Submit</button>
+          <button className="book-form__submit-button" 
+                  type="submit">Submit</button>
         </form>
       </div>
     );

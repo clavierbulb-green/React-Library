@@ -77,9 +77,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <header>
-          <h1 className="headline">React Library</h1>
-          <button className="new-book-button"
+        <header className="header">
+          <h1 className="header__headline">React Library</h1>
+          <button className="header__new-book-button"
                   onClick={this.toggleForm}>New Book</button>
         </header>
         <main>

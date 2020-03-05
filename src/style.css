@@ -19,7 +19,7 @@ button:active {
   transform: scale(95%);
 }
 
-header {
+.header {
   position: sticky;
   top: 0;
 
@@ -35,7 +35,7 @@ header {
   z-index: 10;
 }
 
-.headline {
+.header__headline {
   font-size: calc(2rem + 5vw);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -47,7 +47,7 @@ header {
   margin-bottom: 0.1em;
 }
 
-.new-book-button {
+.header__new-book-button {
   border-style: none;
 
   padding: 0.5em;
@@ -64,6 +64,9 @@ header {
 
   border-radius: 0.5em;
 }
+
+
+/* || Book List */
 
 .book-list {
   list-style: none;
@@ -104,7 +107,7 @@ header {
   opacity: 1;
 }
 
-.title {
+.book-card__title{
   font-size: calc(1.2rem + 2vw);
   font-style: italic;
   font-weight: normal;
@@ -114,7 +117,7 @@ header {
   margin-right: 1.1em;
 }
 
-.book-info {
+.book-card__content {
   margin-bottom: 0.7em;
 }
 
@@ -123,11 +126,11 @@ header {
   margin-bottom: 0.2em;
 }
 
-.author {
+.book-card__author {
   font-weight: bold;
 }
 
-.read-status {
+.book-card__read-status {
   display: inline-block;
 
   border-style: none;
@@ -144,15 +147,15 @@ header {
   color: white;
 }
 
-.read-status.read {
+.book-card__read-status.read {
   background-color: green;
 }
 
-.read-status.not-read {
+.book-card__read-status.not-read {
   background-color: red;
 }
 
-.remove-book-button {
+.book-card__remove-button {
   position: absolute;
   top: 0.2em;
   right: 0.2em;
@@ -215,7 +218,15 @@ header {
   }
 }
 
-.field-list {
+.book-form__title {
+  font-size: calc(1.2rem + 2vw);
+  margin-bottom: 0;
+  margin-top: 0.6em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.book-form__field-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -224,7 +235,7 @@ header {
   font-size: 1.2em;
 }
 
-.field-list li {
+.field-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -232,15 +243,14 @@ header {
   margin-bottom: 1em;
 }
 
-.form-title {
-  font-size: calc(1.2rem + 2vw);
-  margin-bottom: 0;
-  margin-top: 0.6em;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.field-item__input {
+  margin-top: 0.3em;
+}
+.field-item__input-checkbox{
+  align-self: start;
 }
 
-.form-close-button {
+.book-form__close-button {
   position: absolute;
   top: 0.3em;
   right: 0.3em;
@@ -253,14 +263,7 @@ header {
   font-weight: bold;
 }
 
-input {
-  margin-top: 0.3em;
-}
-input[type="checkbox"] {
-  align-self: start;
-}
-
-button[type="submit"] {
+.book-form__submit-button{
   border-style: none;
   border-radius: 0.5em;
   text-transform: uppercase;
