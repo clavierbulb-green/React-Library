@@ -77,9 +77,9 @@ button:active {
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-auto-rows: minmax(280px, auto);
+  grid-auto-rows: minmax(260px, auto);
   column-gap: 3em;
-  row-gap: calc(3em + 4vw);
+  row-gap: calc(1em + 4vw);
 
   padding: 1em;
 }
@@ -111,13 +111,14 @@ button:active {
 }
 
 .book-card__title{
-  font-size: calc(1.4rem + 2vw);
+  font-size: calc(1.6rem + 2vw);
   font-style: italic;
   font-weight: normal;
 
   color: #01579B;
-  margin-top: 0.5em;
+  margin-top: 0.1em;
   margin-right: 1.1em;
+  margin-bottom: 0.3em;
 }
 
 .book-card__content {
@@ -126,7 +127,6 @@ button:active {
 
 .book-card p {
   margin: 0;
-  margin-bottom: 0.2em;
 }
 
 .book-card__author {
@@ -165,7 +165,7 @@ button:active {
 
   border-style: none;
 
-  font-size: calc(1.2em + 2vw);
+  font-size: calc(2em + 1vw);
   font-weight: bold;
 
   color: #DD2C00;
