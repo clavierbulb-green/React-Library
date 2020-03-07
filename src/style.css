@@ -6,6 +6,10 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  margin: 0;
+}
+
 button, input {
   opacity: 0.7;
   transition: all 200ms ease-in-out;
@@ -25,7 +29,7 @@ button:active {
 
   background-color: white;
   padding-bottom: 0.5em;
-  border-bottom: 2px solid #FF3D00;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 
   display: flex;
   flex-flow: row wrap;
@@ -36,7 +40,7 @@ button:active {
 }
 
 .header__headline {
-  font-size: calc(2rem + 5vw);
+  font-size: calc(2.4rem + 5vw);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-align: center;
@@ -78,7 +82,6 @@ button:active {
   row-gap: calc(3em + 4vw);
 
   padding: 1em;
-  padding-left: 0;
 }
 
 .book-card {
@@ -98,7 +101,7 @@ button:active {
   color: #2962FF;
   font-size: calc(1rem + 0.5vw);
 
-  box-shadow: 1px 1px 2px black;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   opacity: 0.9;
   transition: opacity 200ms ease-in-out;
 }
@@ -108,7 +111,7 @@ button:active {
 }
 
 .book-card__title{
-  font-size: calc(1.2rem + 2vw);
+  font-size: calc(1.4rem + 2vw);
   font-style: italic;
   font-weight: normal;
 
@@ -163,6 +166,7 @@ button:active {
   border-style: none;
 
   font-size: calc(1.2em + 2vw);
+  font-weight: bold;
 
   color: #DD2C00;
   background-color: white;
@@ -203,7 +207,7 @@ button:active {
 
   border-radius: 2em;
 
-  box-shadow: 3px 3px 8px black;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 480px) {
